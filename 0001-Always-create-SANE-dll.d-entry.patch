@@ -1,0 +1,25 @@
+From 1fe24faa1588160847df4c7acadd0a536b829c76 Mon Sep 17 00:00:00 2001
+From: "Brett T. Warden" <brett.t.warden@intel.com>
+Date: Wed, 3 Jul 2019 11:36:01 -0700
+Subject: [PATCH 1/2] Always create SANE dll.d entry
+
+---
+ sane/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sane/Makefile.am b/sane/Makefile.am
+index ba8b178..b5fca8f 100644
+--- a/sane/Makefile.am
++++ b/sane/Makefile.am
+@@ -217,7 +217,7 @@ install-data-hook:
+ 	  echo " skipping component activation"; \
+ 	  exit 1; \
+ 	fi
+-	if test -d "$(SANE_SYSCONFDIR)/dll.d"; then \
++	if true || test -d "$(SANE_SYSCONFDIR)/dll.d"; then \
+ 	  dirname="$(DESTDIR)$(SANE_SYSCONFDIR)/dll.d"; \
+ 	  file=$$dirname/$(BACKEND_NAME); \
+ 	  test -d $$dirname || $(MKDIR_P) $$dirname; \
+-- 
+2.22.0
+

@@ -1,0 +1,2 @@
+# Make sure udev rules occur before sane-backends
+mv %{buildroot}/usr/lib/udev/rules.d/utsushi-esci.rules %{buildroot}/usr/lib/udev/rules.d/59-utsushi-esci.rules

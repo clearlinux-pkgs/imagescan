@@ -1,0 +1,2 @@
+--with-udev-confdir=/usr/lib/udev
+--with-sane-confdir=/usr/share/defaults/sane

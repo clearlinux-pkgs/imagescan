@@ -1,0 +1,9 @@
+Configure miss: dld_link in -ldld
+Configure miss: _ prefix in compiled symbols
+Configure miss: sys/dl.h
+Configure miss: dld.h
+Configure miss: mach-o/dyld.h
+Configure miss: LIBMAGICK_PP
+Configure miss: LIBMAGICK_PP
+Configure miss: gm
+Configure miss: uncrustify
