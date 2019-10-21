@@ -4,7 +4,7 @@
 #
 Name     : imagescan
 Version  : 3.59.2
-Release  : 2
+Release  : 3
 URL      : http://support.epson.net/linux/src/scanner/imagescanv3/common/imagescan_3.59.2.orig.tar.gz
 Source0  : http://support.epson.net/linux/src/scanner/imagescanv3/common/imagescan_3.59.2.orig.tar.gz
 Summary  : Build tool
@@ -22,6 +22,7 @@ BuildRequires : automake
 BuildRequires : automake-dev
 BuildRequires : boost-dev
 BuildRequires : buildreq-qmake
+BuildRequires : bzip2-dev
 BuildRequires : doxygen
 BuildRequires : gettext-bin
 BuildRequires : graphviz
@@ -154,7 +155,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571181271
+export SOURCE_DATE_EPOCH=1571630261
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -168,7 +169,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1571181271
+export SOURCE_DATE_EPOCH=1571630261
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imagescan
 cp %{_builddir}/utsushi-0.59.2/COPYING %{buildroot}/usr/share/package-licenses/imagescan/5d5b272eee7052483f8893c6da9de0c258b1036c
@@ -281,7 +282,7 @@ mv %{buildroot}/usr/lib/udev/rules.d/utsushi-esci.rules %{buildroot}/usr/lib/ude
 %defattr(-,root,root,-)
 /usr/lib64/sane/libsane-utsushi.so
 /usr/lib64/sane/libsane-utsushi.so.1
-/usr/lib64/sane/libsane-utsushi.so.1.0.27
+/usr/lib64/sane/libsane-utsushi.so.1.0.28
 /usr/lib64/utsushi/libcnx-hexdump.so
 /usr/lib64/utsushi/libcnx-hexdump.so.0
 /usr/lib64/utsushi/libcnx-hexdump.so.0.0.0
@@ -305,7 +306,7 @@ mv %{buildroot}/usr/lib/udev/rules.d/utsushi-esci.rules %{buildroot}/usr/lib/ude
 /usr/lib64/utsushi/libutsushi.so.0.0.0
 /usr/lib64/utsushi/sane/libsane-utsushi.so
 /usr/lib64/utsushi/sane/libsane-utsushi.so.1
-/usr/lib64/utsushi/sane/libsane-utsushi.so.1.0.27
+/usr/lib64/utsushi/sane/libsane-utsushi.so.1.0.28
 
 %files libexec
 %defattr(-,root,root,-)
