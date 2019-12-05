@@ -4,7 +4,7 @@
 #
 Name     : imagescan
 Version  : 3.61.0
-Release  : 4
+Release  : 5
 URL      : http://support.epson.net/linux/src/scanner/imagescanv3/common/imagescan_3.61.0.orig.tar.gz
 Source0  : http://support.epson.net/linux/src/scanner/imagescanv3/common/imagescan_3.61.0.orig.tar.gz
 Summary  : Build tool
