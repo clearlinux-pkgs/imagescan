@@ -4,7 +4,7 @@
 #
 Name     : imagescan
 Version  : 3.61.0
-Release  : 6
+Release  : 7
 URL      : http://support.epson.net/linux/src/scanner/imagescanv3/common/imagescan_3.61.0.orig.tar.gz
 Source0  : http://support.epson.net/linux/src/scanner/imagescanv3/common/imagescan_3.61.0.orig.tar.gz
 Summary  : Build tool
@@ -22,7 +22,9 @@ BuildRequires : automake
 BuildRequires : automake-dev
 BuildRequires : boost-dev
 BuildRequires : buildreq-qmake
+BuildRequires : bzip2-dev
 BuildRequires : doxygen
+BuildRequires : file-dev
 BuildRequires : gettext-bin
 BuildRequires : graphviz
 BuildRequires : libjpeg-turbo-dev
@@ -155,7 +157,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573689102
+export SOURCE_DATE_EPOCH=1584042246
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -169,7 +171,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1573689102
+export SOURCE_DATE_EPOCH=1584042246
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/imagescan
 cp %{_builddir}/utsushi-0.61.0/COPYING %{buildroot}/usr/share/package-licenses/imagescan/5d5b272eee7052483f8893c6da9de0c258b1036c
@@ -181,6 +183,7 @@ cp %{_builddir}/utsushi-0.61.0/upstream/ltdl/COPYING.LIB %{buildroot}/usr/share/
 %make_install
 %find_lang utsushi
 ## install_append content
+# Make sure udev rules occur before sane-backends
 mv %{buildroot}/usr/lib/udev/rules.d/utsushi-esci.rules %{buildroot}/usr/lib/udev/rules.d/59-utsushi-esci.rules
 ## install_append end
 
@@ -283,7 +286,7 @@ mv %{buildroot}/usr/lib/udev/rules.d/utsushi-esci.rules %{buildroot}/usr/lib/ude
 %defattr(-,root,root,-)
 /usr/lib64/sane/libsane-utsushi.so
 /usr/lib64/sane/libsane-utsushi.so.1
-/usr/lib64/sane/libsane-utsushi.so.1.0.28
+/usr/lib64/sane/libsane-utsushi.so.1.0.29
 /usr/lib64/utsushi/libcnx-hexdump.so
 /usr/lib64/utsushi/libcnx-hexdump.so.0
 /usr/lib64/utsushi/libcnx-hexdump.so.0.0.0
@@ -307,7 +310,7 @@ mv %{buildroot}/usr/lib/udev/rules.d/utsushi-esci.rules %{buildroot}/usr/lib/ude
 /usr/lib64/utsushi/libutsushi.so.0.0.0
 /usr/lib64/utsushi/sane/libsane-utsushi.so
 /usr/lib64/utsushi/sane/libsane-utsushi.so.1
-/usr/lib64/utsushi/sane/libsane-utsushi.so.1.0.28
+/usr/lib64/utsushi/sane/libsane-utsushi.so.1.0.29
 
 %files libexec
 %defattr(-,root,root,-)
