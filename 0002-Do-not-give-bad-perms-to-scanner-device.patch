@@ -1,17 +1,17 @@
-From 0db9b9ef18f6229f8069e2b539bc6251bc912fe9 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Brett T. Warden" <brett.t.warden@intel.com>
 Date: Wed, 3 Jul 2019 12:00:41 -0700
-Subject: [PATCH 2/2] Do not give bad perms to scanner device
+Subject: [PATCH] Do not give bad perms to scanner device
 
 ---
  drivers/esci/utsushi-esci.rules | 3 ---
  1 file changed, 3 deletions(-)
 
 diff --git a/drivers/esci/utsushi-esci.rules b/drivers/esci/utsushi-esci.rules
-index 23c6ea6..9e8a473 100644
+index b438010..bf8fe7b 100644
 --- a/drivers/esci/utsushi-esci.rules
 +++ b/drivers/esci/utsushi-esci.rules
-@@ -165,9 +165,6 @@ ATTRS{idProduct}=="116b", ENV{utsushi_driver}="esci"
+@@ -187,9 +187,6 @@ ATTRS{idProduct}=="117c", ENV{utsushi_driver}="esci"
  ATTRS{idProduct}=="013c", ENV{utsushi_driver}="esci:gt-s650", ENV{firmware_file}="esfw010c.bin"
  ATTRS{idProduct}=="013d", ENV{utsushi_driver}="esci:gt-s650", ENV{firmware_file}="esfw010c.bin"
  
@@ -21,6 +21,3 @@ index 23c6ea6..9e8a473 100644
  #  Device detection by libutsushi depends on libsane_matched being set.
  ENV{utsushi_driver}=="esci*", ENV{libsane_matched}="yes"
  
--- 
-2.22.0
-

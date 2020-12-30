@@ -1,7 +1,7 @@
-From 1fe24faa1588160847df4c7acadd0a536b829c76 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Brett T. Warden" <brett.t.warden@intel.com>
 Date: Wed, 3 Jul 2019 11:36:01 -0700
-Subject: [PATCH 1/2] Always create SANE dll.d entry
+Subject: [PATCH] Always create SANE dll.d entry
 
 ---
  sane/Makefile.am | 2 +-
@@ -20,6 +20,3 @@ index ba8b178..b5fca8f 100644
  	  dirname="$(DESTDIR)$(SANE_SYSCONFDIR)/dll.d"; \
  	  file=$$dirname/$(BACKEND_NAME); \
  	  test -d $$dirname || $(MKDIR_P) $$dirname; \
--- 
-2.22.0
-

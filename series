@@ -1,2 +1,5 @@
 0001-Always-create-SANE-dll.d-entry.patch
 0002-Do-not-give-bad-perms-to-scanner-device.patch
+0003-Fix-build-with-autoconf-2.70.patch
+imagescan-gcc10.patch
+boost-1.74.patch

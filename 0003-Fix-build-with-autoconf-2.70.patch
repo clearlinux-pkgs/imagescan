@@ -1,0 +1,48 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Wed, 30 Dec 2020 03:13:25 +0000
+Subject: [PATCH] Fix build with autoconf 2.70
+
+The second argument for `AS_IF` was missing quotes in a couple cases.
+
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+---
+ configure.ac | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 3d304d6..457ddfa 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -352,7 +352,7 @@ AS_IF([test xno != "x$with_usb"],
+ AM_CONDITIONAL([have_libusb], [test x != "x$LIBUSB_LIBS"])
+ 
+ AS_IF([test xno != "x$with_magick_pp"],
+-   AS_CASE("x$with_magick_pp",
++   [AS_CASE("x$with_magick_pp",
+      [xGraphicsMagick],
+        [PKG_CHECK_MODULES([LIBMAGICK_PP], [GraphicsMagick++],
+           [AC_DEFINE([HAVE_GRAPHICS_MAGICK_PP], [1])])
+@@ -373,11 +373,11 @@ AS_IF([test xno != "x$with_magick_pp"],
+        ],
+      [dnl default case
+       AC_MSG_ERROR([unknown value: --with-magick-pp=$with_magick_pp])
+-     ]))
++     ])])
+ AM_CONDITIONAL([have_libmagick_pp], [test x != "x$LIBMAGICK_PP_LIBS"])
+ 
+ AS_IF([test xno != "x$with_magick"],
+-   AS_CASE("x$with_magick",
++   [AS_CASE("x$with_magick",
+      [xGraphicsMagick],
+        [AC_CHECK_PROGS([MAGICK_CONVERT], [gm])
+         AS_IF([test xgm != x$MAGICK_CONVERT],
+@@ -408,7 +408,7 @@ AS_IF([test xno != "x$with_magick"],
+        ],
+      [dnl default case
+       AC_MSG_ERROR([unknown value: --with-magick=$with_magick])
+-     ]))
++     ])])
+ AC_DEFINE_UNQUOTED([MAGICK_CONVERT], ["$MAGICK_CONVERT"])
+ AM_CONDITIONAL([have_magick], [test x != "x$MAGICK_CONVERT"])
+ 
