@@ -1,10 +1,11 @@
-Configure miss: g++ option to enable C++11 features
-Configure miss: dld_link in -ldld
+Configure miss: LIBMAGICK_PP
+Configure miss: LIBMAGICK_PP
 Configure miss: _ prefix in compiled symbols
-Configure miss: sys/dl.h
 Configure miss: dld.h
-Configure miss: mach-o/dyld.h
-Configure miss: LIBMAGICK_PP
-Configure miss: LIBMAGICK_PP
+Configure miss: dld_link in -ldld
+Configure miss: g++ option to enable C++11 features
+Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gm
+Configure miss: mach-o/dyld.h
+Configure miss: sys/dl.h
 Configure miss: uncrustify
